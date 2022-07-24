@@ -246,7 +246,7 @@ window.addEventListener(
   );
 
 new Typed(".type-text", {
-    strings: ['welcome to my website', "I'm software engineering student 💻🎓^1000"],
+    strings: ['welcome to my website', "I'm a software engineering student :D^1000"],
     typeSpeed: 40,
     backSpeed: 30,
     loop: true,
