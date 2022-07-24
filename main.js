@@ -12,6 +12,9 @@ import marsEdge from './assets/mars_edge.jpg';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import imgUrl from './assets/mail.png'
+
+document.getElementById('mail-button').src = imgUrl
 
  
  
