@@ -1,0 +1,19 @@
+{
+  "name": "nasportfolio",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "gifuct-js": "^2.1.2",
+    "three": "^0.142.0",
+    "typed.js": "^2.0.12"
+  }
+}
