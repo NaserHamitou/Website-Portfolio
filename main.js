@@ -1,6 +1,14 @@
 import './style.css';
 import * as THREE from 'three';
 import Typed from 'typed.js';
+
+import plutoImg from './assets/pluto.jpg';
+import ringImg from './assets/ring.jpg';
+import earthImg from './assets/earth.jpg';
+import earthEdge from './assets/earth_edge.jpg';
+import marsImg from './assets/mars.jpg';
+import marsEdge from './assets/mars_edge.jpg';
+
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
@@ -36,7 +44,7 @@ renderer.setClearColor(0x000000, 0.0);
 './assets/controller.png', 
 */
 
-const jupiterTexture = new THREE.TextureLoader().load('./assets/pluto.jpg');
+const jupiterTexture = new THREE.TextureLoader().load(plutoImg);
 const jupiter = new THREE.Mesh(
     new THREE.IcosahedronGeometry(1, 100),
     new THREE.MeshBasicMaterial({color: 0xff4800, map: jupiterTexture})
@@ -81,7 +89,7 @@ scene.add(plane); */
 
 // torus
 const torusGeo =  new THREE.TorusGeometry( 2, 0.1, 10, 40);
-const ringTexture = new THREE.TextureLoader().load('./assets/ring.jpg');
+const ringTexture = new THREE.TextureLoader().load(ringImg);
 const torusMat = new THREE.MeshStandardMaterial({map: ringTexture, wireframe: true});
 const torus = new THREE.Mesh( torusGeo, torusMat );
 torus.position.setX(3.5).setY(1.7).setZ(-5);
@@ -89,8 +97,8 @@ torus.rotation.x = -10;
 scene.add(torus);
 
 // Earth
-const earthTexture = new THREE.TextureLoader().load('./assets/earth.jpg');
-const eart_edge = new THREE.TextureLoader().load('./assets/earth_edge.jpg');
+const earthTexture = new THREE.TextureLoader().load(earthImg);
+const eart_edge = new THREE.TextureLoader().load(earthEdge);
 const earth = new THREE.Mesh(
     new THREE.SphereGeometry(5, 1000, 1000),
     new THREE.MeshStandardMaterial({
@@ -104,8 +112,8 @@ earth.position.y = -5
 scene.add(earth);
 
 //Mars
-const marsTexture = new THREE.TextureLoader().load('./assets/mars.jpg');
-const mars_edge = new THREE.TextureLoader().load('./assets/mars_edge.jpg');
+const marsTexture = new THREE.TextureLoader().load(marsImg);
+const mars_edge = new THREE.TextureLoader().load(marsEdge);
 const mars = new THREE.Mesh(
     new THREE.SphereGeometry(2.5, 500, 500),
     new THREE.MeshStandardMaterial({
