@@ -30,6 +30,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
 }
 
 main {
@@ -70,6 +71,11 @@ ul {
   font-family:'Trebuchet MS', 'Segoe UI';
 }
 
+li{
+  font-size: 20px;
+  padding: 10px;
+}
+
 /* hr{
   border-color: tomato;
   border-width: 2px;
@@ -95,7 +101,7 @@ ul {
 
 #welcome-title{
   font-weight: 700;
-  font-style: normal;
+  font-family: 'Trebuchet MS', Arial;
   user-select: none;
 }
 
@@ -167,6 +173,10 @@ ul {
   opacity: 0;
   position: relative;
   height: 100%;
+}
+
+.project-text div{
+  bottom: 35px;
 }
 
 .project img{
@@ -282,13 +292,15 @@ blockquote div {
   margin-top: 50px;
   grid-column: 1 / span 12;
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .journey-content{
-  width: 45vw;
+  width: 60vw;
+  margin-left: 15vw;
   margin-top: 100px;
   color: black;
-  margin-left: 10vw;
   border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
@@ -327,6 +339,11 @@ blockquote div {
     grid-column: 4/10;
   }
 
+  .journey-content{
+    width: 80vw;
+    margin-left: 8vw;
+  }
+
   #aboutme{
     display: flex; 
     flex-direction: column;
@@ -348,9 +365,7 @@ blockquote div {
     border-radius: 15px;
   }
 
-  .project{
-    
-  }
+
 
   .project-text{
     padding: 10px;
@@ -394,18 +409,23 @@ blockquote div {
 
 }
 
-#dejardins-intership{
-  margin-left: 42vw;
-}
 
 @media screen and (max-width: 800px) {
   section {
     grid-column: 2/12;
   }
 
-  #dejardins-intership{
-    margin-left: 10vw;
-    width: 60vw;
+  ul{
+    padding: 20px;
+  }
+
+  li{
+    padding: 10px;
+  }
+
+  .project-text div{
+      transform: scale(0.7);
+      bottom: 10px;
   }
 
   #welcome-title{
@@ -416,6 +436,10 @@ blockquote div {
       box-shadow: none;
       border: 1px solid white;
       border-style:ridge;
+  }
+
+  .journey-content{
+    margin-left: 5vw;
   }
 }
 

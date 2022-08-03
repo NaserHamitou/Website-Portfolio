@@ -49,7 +49,7 @@ renderer.setClearColor(0x000000, 0.0);
 
 const jupiterTexture = new THREE.TextureLoader().load(plutoImg);
 const jupiter = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1, 100),
+    new THREE.IcosahedronGeometry(1, 10),
     new THREE.MeshBasicMaterial({color: 0xff4800, map: jupiterTexture})
 );
 jupiter.position.setX(3.5).setY(1.7).setZ(-5);
@@ -103,7 +103,7 @@ scene.add(torus);
 const earthTexture = new THREE.TextureLoader().load(earthImg);
 const eart_edge = new THREE.TextureLoader().load(earthEdge);
 const earth = new THREE.Mesh(
-    new THREE.SphereGeometry(5, 1000, 1000),
+    new THREE.SphereGeometry(5, 30, 30),
     new THREE.MeshStandardMaterial({
         map: earthTexture,
         bumpMap: eart_edge,
@@ -118,7 +118,7 @@ scene.add(earth);
 const marsTexture = new THREE.TextureLoader().load(marsImg);
 const mars_edge = new THREE.TextureLoader().load(marsEdge);
 const mars = new THREE.Mesh(
-    new THREE.SphereGeometry(2.5, 500, 500),
+    new THREE.SphereGeometry(2.5, 30, 30),
     new THREE.MeshStandardMaterial({
         map: marsTexture,
         bumpMap: mars_edge,
@@ -246,7 +246,7 @@ window.addEventListener(
   );
 
 new Typed(".type-text", {
-    strings: ['welcome to my website', "I'm a software engineering student :D^1000"],
+    strings: ['welcome to my website 👋', "I'm a software engineering student 💻^1000"],
     typeSpeed: 40,
     backSpeed: 30,
     loop: true,
