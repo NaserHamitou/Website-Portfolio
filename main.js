@@ -210,7 +210,10 @@ document.addEventListener('scroll', () => {
     document.getElementById("scroll-clue").style.opacity = -(pos/60) + 1;
 
     let scroll = Math.min(Math.max(0, window.scrollY - 2800), 630);
-    document.getElementById("myjourney").style.marginLeft = `${100 - (scroll/5)}vw`;
+    if(window.innerWidth < 820)
+        document.getElementById("myjourney").style.marginLeft = `${100 - ((scroll-20)/5)}vw`;
+    else
+        document.getElementById("myjourney").style.marginLeft = `${100 - ((scroll-80)/5)}vw`;
 
     if(scroll == 630){
         const journ = document.getElementsByClassName("journey-content");

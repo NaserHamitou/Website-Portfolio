@@ -477,6 +477,10 @@ blockquote div {
   #journey-container{
     padding-left: 0px;
   }
+
+  #myjourney{
+    margin-left: 90vw;
+  }
 }
 
 #wrapper{
