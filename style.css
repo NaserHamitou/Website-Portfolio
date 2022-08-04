@@ -485,6 +485,8 @@ blockquote div {
   align-items:center;
   width: 250px;
   align-self: center;
+  overflow-y: hidden;
+  
 }
 
 .checkmark__circle{
