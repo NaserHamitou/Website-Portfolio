@@ -26,6 +26,10 @@ html::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
+body{
+  width: 100vw;
+}
+
 canvas {
   position: fixed;
   top: 0;
