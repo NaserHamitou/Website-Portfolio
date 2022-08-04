@@ -15,7 +15,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import imgUrl from './assets/mail.png'
 
 document.getElementById('mail-button').src = imgUrl
-
+console.log(window.scrollY);
  
  
  /**************************   SETUP   ***************************************/
