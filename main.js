@@ -14,10 +14,19 @@ import imgUrl from './assets/mail.png'
 import scrabbleHome from './assets/showcase/scrabble/menu-sb.png';
 import scrabbleGame from  './assets/showcase/scrabble/game.png';
 import scrabbleOnline from './assets/showcase/scrabble/online.png';
+import nasworld from './assets/nasworld.png';
+import nasempty from './assets/emptynas.png';
+import nashome from './assets/nashome.png';
+import angular from './assets/ang-icon2.png';
+import aws from './assets/aws.png';
+import mongo from './assets/mongo.png';
+import socket from './assets/socket.png';
+import react from './assets/react.png';
+import hardhat from './assets/hardhat.png';
+import firebase from './assets/firebase.png';
+import solidity from './assets/solidity.png';
 
-document.getElementById('mail-button').src = imgUrl
-console.log(window.scrollY);
- 
+document.getElementById('mail-button').src = imgUrl;
  /**************************   SETUP   ***************************************/
  const scene = new THREE.Scene();
  const clock = new THREE.Clock();
@@ -38,15 +47,6 @@ renderer.setClearColor(0x000000, 0.0);
     
 /***************************  OBJECTS  ****************************************/
 // Cube
-/* 
-'./assets/airplane.png',
-'./assets/astronomy.png',
-'./assets/music.png',
-'./assets/football.png',
-'./assets/coding.png',
-'./assets/controller.png', 
-*/
-
 const jupiterTexture = new THREE.TextureLoader().load(plutoImg);
 const jupiter = new THREE.Mesh(
     new THREE.IcosahedronGeometry(1, 10),
@@ -56,39 +56,6 @@ jupiter.position.setX(3.5).setY(1.7).setZ(-5);
 jupiter.rotation.x += 0.9;
 scene.add(jupiter);
 
-/* const textureLoader = new TextureLoader();
-const cubeGeo = new THREE.BoxGeometry(1, 1, 1);
-const cubeTexture = [
-    new THREE.MeshStandardMaterial({
-        map: textureLoader.load("./assets/me_pic.jpg")
-    }),
-    new THREE.MeshStandardMaterial({
-        map: textureLoader.load("./assets/me_pic.jpg")
-    }),
-    new THREE.MeshStandardMaterial({
-        map: textureLoader.load("./assets/me_pic.jpg")
-    }),
-    new THREE.MeshStandardMaterial({
-        map: textureLoader.load("./assets/me_pic.jpg")
-    }),
-    new THREE.MeshStandardMaterial({
-        map: textureLoader.load("./assets/me_pic.jpg")
-    }),
-    new THREE.MeshStandardMaterial({
-        map: textureLoader.load("./assets/me_pic.jpg")
-    }),
-
-];
-const cube = new THREE.Mesh(cubeGeo, cubeTexture);
-cube.position.setX(2).setY(1.7).setZ(-5);
-scene.add(cube); */
-// plane
-/* const planeGeo = new THREE.PlaneGeometry(1, 1, 2, 2);
-const myPic = new THREE.TextureLoader().load('./assets/me_pic.jpg');
-const planeMat = new THREE.MeshStandardMaterial({map: myPic});
-const plane = new THREE.Mesh(planeGeo, planeMat);
-plane.position.setX(2).setY(1.7).setZ(-5);
-scene.add(plane); */
 
 // torus
 const torusGeo =  new THREE.TorusGeometry( 2, 0.1, 10, 40);
@@ -170,20 +137,10 @@ function moveCamera(){
 }
 document.body.onscroll = moveCamera;
 
-/* // Helper
-const lightHelper = new THREE.PointLightHelper(pointLight)
-const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper, gridHelper) */
-
-// Background img
-
 /**************************** ANIMATION ***************************************/
 function animate() {
     requestAnimationFrame(animate);
     const time = clock.getElapsedTime();
-    /* cube.rotation.z = Math.cos(time) * 0.06;
-    cube.rotation.x = Math.cos(time) * 0.005;
-    cube.rotation.y += 0.005; */
     torus.translateX(Math.cos(time) * 0.001);
     torus.translateY(Math.sin(time) * 0.0005);
     earth.rotation.y += 0.01;
@@ -256,16 +213,82 @@ new Typed(".type-text", {
     
 });
 
-const link = imgUrl;
-console.log(typeof imgUrl);
+/*******Projects Descriptions********* */
+let projectTitle = '';
+let projectDescription = '';
+let tryButton = '';
+let gitLink = '';
+let projectImgURLs = [];
+let stackImgURLs = [];
+
+const image = document.getElementById('project-img');
+const projectElements = document.getElementsByClassName('project');
+
+const setDescription = (git) => {
+    document.getElementById('project-title').textContent = projectTitle;
+    document.getElementById('description-paragraph').textContent = projectDescription;
+    document.getElementById('try-link').href = tryButton;
+    const gitButton = document.getElementById('git-link');
+    if(git) {
+        gitButton.href = gitLink;
+        gitButton.style.display = 'block';
+    }else{
+        gitButton.style.display = 'none';
+    }
+    const stacks = document.getElementById('stack');
+    for(let i = 0; i < stackImgURLs.length; i++){
+        const image = document.createElement('img');
+        image.src = stackImgURLs[i];
+        image.alt = '';
+        stacks.appendChild(image);
+    }
+    stacks.style.alignSelf = 'center';
+}
+
+const handleProject = (id) => {
+    switch(id){
+        case 'p1':
+            projectTitle = 'Scrabble Online';
+            projectDescription = 'This scrabble game was made for a school project. You can chose between multiplayer mode allowing you to play with friends and random people online or a single player mode against an AI with an easy and hard difficulty.';
+            tryButton = 'http://polytechnique-montr-al.gitlab.io/log2990/20213/equipe-205/log2990-205/#/game-options';
+            gitLink = 'https://github.com/NaserHamitou/Scrabble-Online';
+            projectImgURLs = [scrabbleHome, scrabbleGame, scrabbleOnline];
+            stackImgURLs = [angular, aws, mongo, socket];
+            image.src = projectImgURLs[0];
+            setDescription(true);
+            break;
+        case 'p2':
+            projectTitle = 'Nas World NFT';
+            projectDescription = 'Nas World is an NFT project allowing users to mint their own and unique randomly generated NFT. This web3 application was deployed on the ethereum network. For the purpose of making it avalaible for everyone, the transactions are done on a test networks which means its completely free!';
+            tryButton = 'https://nasworld.netlify.app';
+            gitLink = 'https://github.com/NaserHamitou/nft-project';
+            projectImgURLs = [nasworld, nasempty, nashome];
+            stackImgURLs = [solidity, react, hardhat, firebase];
+            image.src = projectImgURLs[0];
+            setDescription(true);
+            break;
+        case 'p3':
+            projectTitle = 'Self Driving Car'
+            projectDescription = 'Self driving robot capable of following a line while being able to turn and stop when facing obstacles. It can be controlled by a wireless infrared signals and can also play sounds. This robot was build from the ground up including the wires, the mechanical parts and the motherboard.'
+            tryButton = 'https://cours.polymtl.ca/inf1900/';
+            projectImgURLs = [nasworld, nasempty, nashome];
+            stackImgURLs = [solidity, react, hardhat, firebase];
+            image.src = projectImgURLs[0];
+            setDescription(false);
+            break;
+
+    }
+    document.getElementById('blanket').style.display = 'block';
+    document.getElementById('projects-description').style.display = 'flex';
+}
+
+for(const project of projectElements) {
+    project.addEventListener('click', ()=>{
+        handleProject(project.id);
+    });
+}
 
 let position = 0;
-const scrabbleURL = [
-    scrabbleHome,
-    scrabbleGame,
-    scrabbleOnline
-];
-const image = document.getElementById('project-img');
 const buttonLeft = document.getElementById('switch-left');
 const buttonRight = document.getElementById('switch-right');
 const closeProject = document.getElementById('close-project');
@@ -273,19 +296,21 @@ const closeProject = document.getElementById('close-project');
 closeProject.addEventListener("click", () => {
     document.getElementById('blanket').style.display = 'none';
     document.getElementById('projects-description').style.display = 'none';
+    const stack = document.getElementById('stack');
+    while(stack.firstChild){
+        stack.removeChild(stack.lastChild);
+    }
 });
-
-image.src = scrabbleHome;
 
 const rightButton = () => {
     console.log('right');
-    image.src = scrabbleURL[0];
+    image.src = projectImgURLs[0];
 
-    if(position >= scrabbleURL.length - 1) {
+    if(position >= projectImgURLs.length - 1) {
         position = 0;
-        image.src = scrabbleURL[position];
+        image.src = projectImgURLs[position];
     }else {
-        image.src = scrabbleURL[position + 1];
+        image.src = projectImgURLs[position + 1];
         position++;
     }
 }
@@ -293,19 +318,16 @@ const rightButton = () => {
 const leftButton = () => {
     console.log('left');
     if(position < 1){
-        position = scrabbleURL.length - 1;
-        image.src = scrabbleURL[position];
+        position = projectImgURLs.length - 1;
+        image.src = projectImgURLs[position];
     } else {
-        image.src = scrabbleURL[position - 1];
+        image.src = projectImgURLs[position - 1];
         position--;
     }
 }
 
-
 buttonLeft.addEventListener("click", leftButton, false);
 buttonRight.addEventListener("click", rightButton, false);
-
-
 
 renderer.render(scene, camera);
 Array(1000).fill().forEach(addStar);
