@@ -44,64 +44,61 @@
       <div style="height: 1800px;"></div>
       <section>
         <h2 id="myprojects">My projects</h2>
-        <br>
-        <div id="project-container">
-          <div class="project" id="scrabble-project">
-            <div class="project-text">
-              <h3 class="project-title">Scrabble Online</h3>
-              <p style="text-align: center;">
-                <a style="color: white; font-family: 'Segoe UI';" href="http://polytechnique-montr-al.gitlab.io/log2990/20213/equipe-205/log2990-205/">
-                  Play Now !</a>
-              </p>
-              <div style="width: 80%;  position: fixed; border: 1px solid; background-color: white; border-radius: 10px; padding: 5px; display:flex; justify-content: space-around;">
-                  <img src="./assets/ang-icon2.png" alt="" title="Angular">
-                  <img src="./assets/node.png" alt="" title="NodeJS">
-                  <img src="./assets/socket.png" alt="" title="Socket.io">
-                  <img src="./assets/aws.png" alt="" title="AWS">
-                  <img src="./assets/mongo.png" alt="" title="MongoDB">
-              </div>
+        <div class="project-container">
+            <div class="project 1">
+              <img src="./assets/scrabble.png" alt="">
             </div>
-          </div>
-
-          <div class="project" id="robot-project">
-            <div class="project-text">
-              <h3 class="project-title">Self Driving Robot</h3>
-              <p style="text-align: center;">
-                <a style="color: white; font-family: 'Segoe UI';" href="https://www.polymtl.ca/programmes/cours/projet-initial-de-systeme-embarque">
-                  Visit for more info</a>  
-              </p>
-              <div style="width: 80%;  position: fixed; border: 1px solid; background-color: white; border-radius: 10px; padding: 5px; display:flex; justify-content: space-around;">
-                <img src="./assets/c-lang.png" alt="" title="C">
-                <img src="./assets/linux.png" alt="" title="Linux">
-                <img src="./assets/chip.png" alt="" title="AtMega32">
-                <img src="./assets/sensor.png" alt="" title="Sensors">
+            <div class="project 2">  
+              <img src="./assets/nft.png" alt="">          
             </div>
+            <div class="project 3">
+              <img src="./assets/inf1900.png" alt="">
             </div>
-          </div>
-
-          <div class="project" id="star-project">
-            <div class="project-text">
-              <h3 class="project-title" style="font-size: 30px;">RoboMaster: Computer Vision</h3>
-              <p style="text-align: center;">
-                <a style="color: white; font-family: 'Segoe UI';" href="https://www.robomaster.com/en-US">
-                  Visit for more info</a>  
-              </p>
-              <div style="width: 80%;  position: fixed; border: 1px solid; background-color: white; border-radius: 10px; padding: 5px; display:flex; justify-content: space-around;">
-                <img src="./assets/py-icon.png" alt="" title="Python">
-                <img src="./assets/open-cv.png" alt="" title="OpenCV">
-                <img src="./assets/tensorflow.png" alt="" title="TensorFlow">
-                <img src="./assets/numPy.png" alt="" title="NumPy">
+            <div class="project 4">
+              <img src="./assets/robomaster.png" alt="">
             </div>
+            <div class="coming-soon">
+              <h2 style="margin-top: 120px;">More coming soon!</h2>
             </div>
-          </div>
-
-          <div class="project"  id="coming-project">
-            <div class="project-text" style="opacity: 1; align-items: center; display: flex; justify-content: center; border: 2px solid rgb(255, 255, 255); border-radius: 15px; overflow: hidden;">
-              <img src="./assets/coming-soon.png" >
-            </div>
-          </div>
         </div>
       </section>
+
+      <div id="blanket"></div>
+
+      <div id="projects-description">
+        <div style="display: flex; flex-direction: row-reverse; padding: 25px; padding-bottom: 10px;">
+          <img id="close-project" src="./assets/close.png" alt="" style="cursor: pointer;">
+        </div>
+        <h2 id="project-title" style="margin-top: 10px; margin-bottom: 20px;">Scrabble Online</h2>
+        <div id="showcase-area">
+
+          <button  id="switch-left">❮</button>
+            <img id="project-img" alt="" >
+          <button  id="switch-right">❯</button>
+
+        </div>
+        <p id="description-paragraph">This scrabble game was made for a school project. You can chose between multiplayer 
+          mode allowing you to play with friends and random people online or a single player mode 
+          against an AI with an easy and hard difficulty. 
+        </p>
+        <div style="display: flex; flex-direction:row; justify-content:space-evenly">
+          <a id="try-link" style="text-align: center;" href="http://polytechnique-montr-al.gitlab.io/log2990/20213/equipe-205/log2990-205/#/game-options" target="_blank" rel="noopener noreferrer">
+            <button class="try-button play">Try it out !</button>
+          </a>
+          <a id="git-link" style="text-align: center;" href="https://github.com/NaserHamitou/Scrabble-Online" target="_blank" rel="noopener noreferrer">
+            <button  class="try-button git">Github repo</button>
+          </a>
+        </div>
+        <h4 style="margin-left: 6%; margin-bottom: 5px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter; color: #ffffffad;">Made with </h4>
+        <div style="display: flex; flex-direction: row; justify-content:space-evenly; background-color: #f0f6ff; border-radius: 15px; width: 90%; align-self: center; padding-top: 5px; padding-bottom: 5px;">
+          <img src="./assets/ang-icon2.png" alt="">
+          <img src="./assets/aws.png" alt="">
+          <img src="./assets/mongo.png" alt="">
+          <img src="./assets/socket.png" alt="">
+        </div>
+        
+
+      </div>
 
       <section>
         <div id="myjourney">
@@ -120,7 +117,7 @@
             <li>Yearly Interpersonal and Group Projects </li>
             <li>Enriched Mathematics and Science courses</li>
             <li>Enriched Language courses (French, English, Spanish)</li>
-            <li>Yearly travels around the world (notably Spain and Greece)</li>
+            <li>Yearly travels around the world</li>
             <li>Total of 200 hours of volunteering across multiple charitable organizations</li>
           </ul> 
         </div>
@@ -177,7 +174,8 @@
           <img src="./assets/me.jpg" alt="" style="border-radius: 35px; margin-top: 30px;" width="250" height="250">
           <div style="margin-left: 2vw;">
             <h3 style="font-size: 36px;">About Me</h3>
-            <p style="font-family: 'Montserrat', sans-serif;">I'm a  software engineering student with a passion for A.I., Machine Learning and Data Science. Being someone who always had big interest in Mathematics and Science,
+            <p style="font-family: 'Montserrat', sans-serif;">I'm a  software engineering student with a passion for A.I., Machine Learning and Data Science. 
+              I absolute love keeping up and learning about the latest cutting edge technology that can have a impact on the world. Being someone who always was fascinated by Mathematics and Science,
               I look forward to take up many challenges while being part of a team I can grow and learn with.
             </p>
           </div>

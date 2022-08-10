@@ -1,22 +1,22 @@
 import './style.css';
 import * as THREE from 'three';
 import Typed from 'typed.js';
-
 import plutoImg from './assets/pluto.jpg';
 import ringImg from './assets/ring.jpg';
 import earthImg from './assets/earth.jpg';
 import earthEdge from './assets/earth_edge.jpg';
 import marsImg from './assets/mars.jpg';
 import marsEdge from './assets/mars_edge.jpg';
-
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import imgUrl from './assets/mail.png'
+import scrabbleHome from './assets/showcase/scrabble/menu-sb.png';
+import scrabbleGame from  './assets/showcase/scrabble/game.png';
+import scrabbleOnline from './assets/showcase/scrabble/online.png';
 
 document.getElementById('mail-button').src = imgUrl
 console.log(window.scrollY);
- 
  
  /**************************   SETUP   ***************************************/
  const scene = new THREE.Scene();
@@ -255,6 +255,57 @@ new Typed(".type-text", {
     loop: true,
     
 });
+
+const link = imgUrl;
+console.log(typeof imgUrl);
+
+let position = 0;
+const scrabbleURL = [
+    scrabbleHome,
+    scrabbleGame,
+    scrabbleOnline
+];
+const image = document.getElementById('project-img');
+const buttonLeft = document.getElementById('switch-left');
+const buttonRight = document.getElementById('switch-right');
+const closeProject = document.getElementById('close-project');
+
+closeProject.addEventListener("click", () => {
+    document.getElementById('blanket').style.display = 'none';
+    document.getElementById('projects-description').style.display = 'none';
+});
+
+image.src = scrabbleHome;
+
+const rightButton = () => {
+    console.log('right');
+    image.src = scrabbleURL[0];
+
+    if(position >= scrabbleURL.length - 1) {
+        position = 0;
+        image.src = scrabbleURL[position];
+    }else {
+        image.src = scrabbleURL[position + 1];
+        position++;
+    }
+}
+
+const leftButton = () => {
+    console.log('left');
+    if(position < 1){
+        position = scrabbleURL.length - 1;
+        image.src = scrabbleURL[position];
+    } else {
+        image.src = scrabbleURL[position - 1];
+        position--;
+    }
+}
+
+
+buttonLeft.addEventListener("click", leftButton, false);
+buttonRight.addEventListener("click", rightButton, false);
+
+
 
 renderer.render(scene, camera);
 Array(1000).fill().forEach(addStar);
