@@ -173,7 +173,7 @@ video{
   user-select: none; 
 }
 
-#showcase-area button{
+#switch-left, #switch-right{
   font-size:50px;
   margin: 20px;
   color: white;
@@ -182,7 +182,7 @@ video{
   cursor: pointer;
 }
 
-#showcase-area button:active{
+#switch-left:active, #switch-right:active{
   background-color: #36363633;
 }
 
@@ -480,9 +480,10 @@ blockquote div {
     margin-left: 90vw;
   }
 
-  #showcase-area button{
+  #switch-left, #switch-right{
     font-size:40px;
     margin: 10px;
+    width: 30px;
   }
 
   #projects-description p{
