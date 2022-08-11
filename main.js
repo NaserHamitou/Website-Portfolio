@@ -301,8 +301,10 @@ const handleProject = (id) => {
             break;
 
     }
-    document.getElementById('blanket').style.display = 'block';
-    document.getElementById('projects-description').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('blanket').style.display = 'block';
+        document.getElementById('projects-description').style.display = 'flex';
+    }, 500);
 }
 
 for(const project of projectElements) {
