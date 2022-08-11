@@ -103,6 +103,11 @@ video{
   height: 360px;
   background-color: rgba(255, 255, 255, 0.048);
   border-radius: 25px;
+  cursor: pointer;
+}
+
+.project:hover{
+  transform: scale(1.02);
 }
 
 .coming-soon{
@@ -502,6 +507,11 @@ blockquote div {
   align-self: center;
   overflow-y: hidden;
   
+}
+
+#close-project:active{
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 5px;
 }
 
 #blanket{

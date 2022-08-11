@@ -25,6 +25,20 @@ import react from './assets/react.png';
 import hardhat from './assets/hardhat.png';
 import firebase from './assets/firebase.png';
 import solidity from './assets/solidity.png';
+import robot from './assets/showcase/inf1900/inf1900.gif';
+import robotusb from './assets/showcase/inf1900/robot-usb.png';
+import clang from './assets/c-lang.png';
+import chip from './assets/chip.png';
+import sensor from './assets/sensor.png';
+import linux from './assets/linux.png';
+import robo1 from './assets/showcase/polystar/robotstar1.png';
+import robo2 from './assets/showcase/polystar/robotstar2.png';
+import robo3 from './assets/showcase/polystar/robotstar3.png';
+import python from './assets/py-icon.png';
+import opencv from './assets/open-cv.png';
+import numPy from './assets/numPy.png';
+import nodej from './assets/node.png';
+
 
 document.getElementById('mail-button').src = imgUrl;
  /**************************   SETUP   ***************************************/
@@ -253,7 +267,7 @@ const handleProject = (id) => {
             tryButton = 'http://polytechnique-montr-al.gitlab.io/log2990/20213/equipe-205/log2990-205/#/game-options';
             gitLink = 'https://github.com/NaserHamitou/Scrabble-Online';
             projectImgURLs = [scrabbleHome, scrabbleGame, scrabbleOnline];
-            stackImgURLs = [angular, aws, mongo, socket];
+            stackImgURLs = [angular, aws, mongo, socket, nodej];
             image.src = projectImgURLs[0];
             setDescription(true);
             break;
@@ -271,8 +285,17 @@ const handleProject = (id) => {
             projectTitle = 'Self Driving Car'
             projectDescription = 'Self driving robot capable of following a line while being able to turn and stop when facing obstacles. It can be controlled by a wireless infrared signals and can also play sounds. This robot was build from the ground up including the wires, the mechanical parts and the motherboard.'
             tryButton = 'https://cours.polymtl.ca/inf1900/';
-            projectImgURLs = [nasworld, nasempty, nashome];
-            stackImgURLs = [solidity, react, hardhat, firebase];
+            projectImgURLs = [robot, robotusb];
+            stackImgURLs = [clang, chip, linux, sensor];
+            image.src = projectImgURLs[0];
+            setDescription(false);
+            break;
+        case 'p4':
+            projectTitle = 'Robomaster Competition'
+            projectDescription = 'International robotics competition between universities. I was part of the computer vision team where we worked on giving the robots the ability to detect different elements on the battleground.';
+            tryButton = 'https://www.polystarmtl.com/comp%C3%A9tition-robomaster';
+            projectImgURLs = [robo1, robo2, robo3];
+            stackImgURLs = [python, opencv, numPy];
             image.src = projectImgURLs[0];
             setDescription(false);
             break;
