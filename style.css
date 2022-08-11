@@ -163,14 +163,17 @@ video{
 }
 
 #showcase-area{
-  width: 100%;
+  position: relative;
+  max-width: 100%;
   height: 30%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none; 
+  max-width: 100%;
+  position: relative;
 }
 
 #switch-left, #switch-right{
@@ -383,13 +386,6 @@ blockquote div {
     width: 80vw;
     margin-left: 8vw;
   }
-
-  #switch-left, #switch-right{
-    font-size:40px;
-    margin: 10px;
-    width: 40px;
-  }
-
 
   #aboutme{
     display: flex; 
