@@ -459,6 +459,10 @@ blockquote div {
     padding: 10px;
   }
 
+  #showcase-area{
+    max-width: 90vw;
+  }
+
   #scroll-clue{
     left: 35vw;
   }
