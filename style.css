@@ -384,6 +384,11 @@ blockquote div {
     margin-left: 8vw;
   }
 
+  #switch-left, #switch-right{
+    font-size:40px;
+    margin: 10px;
+    width: 40px;
+  }
 
 
   #aboutme{
@@ -478,12 +483,6 @@ blockquote div {
 
   #myjourney{
     margin-left: 90vw;
-  }
-
-  #switch-left, #switch-right{
-    font-size:40px;
-    margin: 10px;
-    width: 6vw;
   }
 
   #projects-description p{
