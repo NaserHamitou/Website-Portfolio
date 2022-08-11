@@ -182,14 +182,17 @@ video{
   background-color: #00000023;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 #switch-left:active, #switch-right:active{
   background-color: #36363633;
 }
 
-#showcase-area img{
+#project-img{
   object-fit:contain;
+  width: 248;
+  height: 248;
 }
 
 #contact-me img:hover{
@@ -457,6 +460,11 @@ blockquote div {
 
   li{
     padding: 10px;
+  }
+
+  #project-img{
+    max-width: 216px;
+    max-height: 216px;
   }
 
   #showcase-area{
